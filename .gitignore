@@ -1,0 +1,57 @@
+# ignore editor-specific working files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+.idea/*
+*~
+
+# ignore lock file until it works with npm < version 5
+package-lock.json
+
+# ignore all compressed files
+*.gz, *.xz, *.zip
+
+# ignore bad file types.  These should never be version-controlled
+*.pdf, *.doc, *.docx, *.odt, *.xls, *.xlsx
+
+# ignore npm/node modules
+node_modules/
+npm-debug.log
+
+# ignore bower installation target
+client/vendor/
+
+# ignore built files
+bin/
+
+# ignore the upload folder
+client/src/upload/
+test/artifacts/
+
+# ignore dotenv configuration
+.env
+
+# ignore visual studio files
+.vscode/*
+nbproject/*
+
+# ignore netbeans files
+nbproject/
+
+# ignore istanbul generated folders
+.nyc_output/
+
+# Ignore test files
+sh/build-database-test.sh
+
+# Ignore local temporary files
+temp/
+
+# ignore documentation bad files
+docs/_site/
+docs/.sass-cache/
+
+client/upload/
+
+migration-*.sql
+yarn-error.log
+*.log

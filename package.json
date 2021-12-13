@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "debug": "^4.3.3",
+    "dotenv": "^10.0.0",
+    "puppeteer-core": "^13.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  },
+  "name": "snisrdc-local-backup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "git@github.com:IMA-WorldHealth/snisrdc-local-backup.git",
+  "author": "Jonathan Niles <jonathanwniles@gmail.com>"
+}
