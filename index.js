@@ -65,6 +65,8 @@ const sleep = (seconds) => new Promise(
   const { search } = URL.parse(link);
   const filename = path.parse(link.replace(search, '')).base;
 
+  debug('Saving to file:', filename);
+
   // downloading
   await new Promise((resolve, reject) => {
     https.get(link, (res) => {
