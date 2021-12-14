@@ -4,6 +4,8 @@ const pptr = require('puppeteer-core');
 
 const fs = require('fs');
 const https = require('https');
+const URL = require('url');
+const path = require('path');
 
 const sleep = (seconds) => new Promise(
   (resolve) => { setTimeout(() => resolve(), seconds * 1000); },
@@ -59,10 +61,14 @@ const sleep = (seconds) => new Promise(
 
   debug('got the link:', link);
 
+  // parse the link to get the filename
+  const { search } = URL.parse(link);
+  const filename = path.parse(link.replace(search, '')).base;
+
   // downloading
   await new Promise((resolve, reject) => {
     https.get(link, (res) => {
-      const stream = fs.createWriteStream(`baomanager-snisrdc-backup-${Date.now()}.zip`);
+      const stream = fs.createWriteStream(filename);
       res.pipe(stream);
       stream.on('finish', () => {
         stream.close();
