@@ -65,12 +65,15 @@ const sleep = (seconds) => new Promise(
   const { search } = URL.parse(link);
   const filename = path.parse(link.replace(search, '')).base;
 
-  debug('Saving to file:', filename);
+  const directory = process.env.BACKUPS_DIR || __dirname;
+  const fpath = path.join(directory, filename);
+
+  debug('Saving to file:', fpath);
 
   // downloading
   await new Promise((resolve, reject) => {
     https.get(link, (res) => {
-      const stream = fs.createWriteStream(filename);
+      const stream = fs.createWriteStream(fpath);
       res.pipe(stream);
       stream.on('finish', () => {
         stream.close();
