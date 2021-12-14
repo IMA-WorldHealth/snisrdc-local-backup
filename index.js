@@ -14,7 +14,7 @@ const sleep = (seconds) => new Promise(
 // main
 (async () => {
   debug('starting puppeteer from', process.env.CHROME_BIN);
-  const browser = await pptr.launch({ executablePath: process.env.CHROME_BIN, headless: false });
+  const browser = await pptr.launch({ executablePath: process.env.CHROME_BIN, headless: true });
   const page = await browser.newPage();
   await page.goto('https://manager.baosystems.com/');
 
